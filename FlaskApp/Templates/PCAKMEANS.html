@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>PCA + K-means</title>
+    <link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-1.2.0.min.css" type="text/css" />
+    <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-1.2.0.min.js"></script>
+</head>
+<body>
+    <h1>PCA + K-means</h1>
+    <div>
+        <form action="/PCAKMEANS">
+            <label for="cen">Insert number of centers:</label>
+            <input type="number" name="cen" required="required" min="0" max="11">
+
+            <input type="submit">
+        </form>
+        <button onclick="Show()">See Dataset</button>
+        <button onclick="Centers()">See Centers</button>
+        <button onclick="back()">Back</button>
+    </div>
+    {{ script|safe }}
+    {{ div|safe }}
+</body>
+<script>
+    function Show(){
+        window.location = '/Pca+Kmeans/Show'
+    }
+    function Centers(){
+        window.location = '/Centers/Show'
+    }
+    function back(){
+        window.location='/'
+    }
+</script>
+</html>

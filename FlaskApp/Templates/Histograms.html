@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Histograms</title>
+    <link rel="stylesheet" href="http://cdn.pydata.org/bokeh/release/bokeh-1.2.0.min.css" type="text/css" />
+    <script type="text/javascript" src="http://cdn.pydata.org/bokeh/release/bokeh-1.2.0.min.js"></script>
+</head>
+<body>
+    <h1>Histograms</h1>
+    <div>
+        <form action="/Histograms">
+            <label for="bins">Insert number of bins:</label>
+            <input type="number" name="bins" required="required">
+
+            <input type="submit">
+        </form>
+        <button onclick="back()">Back</button>
+    </div>
+    {% for plot in plots %}
+        {% for value in plot %}
+            {{ value|safe }}
+        {% endfor %}
+    {% endfor %}
+</body>
+
+<script>
+    function back(){
+        window.location='/'
+    }
+</script>
+</html>
