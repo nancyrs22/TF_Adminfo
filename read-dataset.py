@@ -32,3 +32,8 @@ functions.replaceColumn(data,norm,2)
 norm = functions.normalize(functions.getColumn(data,3))
 functions.replaceColumn(data,norm,3)
 
+"""
+for i in range(3):
+    norm = functions.normalize(functions.getColumn(data,i))
+    functions.replaceColumn(data,norm,i)
+"""
